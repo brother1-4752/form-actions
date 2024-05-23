@@ -1,35 +1,52 @@
+"use client";
+
+import FormButton from "@/components/form-btn";
+import FormInput from "@/components/form-input";
+import { handleSubmit } from "./login/action";
+import { useFormState } from "react-dom";
+import Toast from "@/components/toast";
+
 export default function Home() {
+  const [state, action] = useFormState(handleSubmit, null);
+  const isShowToast = state?.errors ? true : false;
+  console.log(isShowToast);
   return (
-    <main style={{ width: "70%" }} className="flex flex-col">
-      <header className="flex justify-center py-5">
+    <main style={{ width: "70%" }} className="flex flex-col items-center">
+      <header className="flex justify-center py-3 w-full">
         <div className=" text-5xl">🔥</div>
       </header>
-      <section className="flex justify-center py-5">
-        <form className=" flex flex-col w-full px-10 gap-3">
-          <input
-            className="placeholder-gray-300 h-12 rounded-full px-5 ring-gray-300 focus:ring-4 focus:outline-gray-200"
+      <section className=" w-full flex flex-col items-center justify-around gap-3 py-5 ">
+        <form action={action} className="flex flex-col w-full gap-3">
+          <FormInput
             type="email"
+            name="email"
             placeholder="✉️  Email"
-            required
+            required={true}
+            errors={state?.errors ?? {}}
           />
-          <input
-            className="placeholder-gray-300 h-12 rounded-full px-5 ring-gray-300 focus:ring-4 focus:outline-gray-200"
-            type="text"
+          <FormInput
+            type="username"
+            name="username"
             placeholder="🧑‍💻  Username"
-            required
+            required={true}
+            errors={state?.errors ?? {}}
           />
-          <input
-            className="placeholder-gray-300 h-12 rounded-full px-5 ring-gray-300 focus:ring-4 focus:outline-gray-200"
+          <FormInput
             type="password"
+            name="password"
             placeholder="🗝️  Password"
-            required
+            required={true}
+            errors={state?.errors ?? {}}
           />
-          <button
-            className="h-12 bg-gray-200 text-gray-800 rounded-full hover:bg-red-300 transition-colors"
-            type="submit"
-          >
-            Log in
-          </button>
+          <FormButton text="Log in" />
+          {/* {isShowToast && (
+            <Toast
+              type={isShowToast ? "success" : "error"}
+              message={
+                isShowToast ? "에러가 발생했습니다." : "로그인에 성공했습니다."
+              }
+            />
+          )} */}
         </form>
       </section>
     </main>

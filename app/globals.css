@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .primary-btn {
+    @apply h-12 bg-gray-200 text-gray-800 rounded-full hover:bg-red-300 hover:text-white transition-colors;
+  }
+
+  .primary-input {
+    @apply placeholder-gray-300 h-12 rounded-full px-5 ring-gray-300 focus:ring-4 focus:outline-gray-200;
+  }
+}
