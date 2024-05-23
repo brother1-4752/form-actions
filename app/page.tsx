@@ -10,19 +10,22 @@ export default function Home() {
             className="placeholder-gray-300 h-12 rounded-full px-5 ring-gray-300 focus:ring-4 focus:outline-gray-200"
             type="email"
             placeholder="✉️  Email"
+            required
           />
           <input
             className="placeholder-gray-300 h-12 rounded-full px-5 ring-gray-300 focus:ring-4 focus:outline-gray-200"
             type="text"
             placeholder="🧑‍💻  Username"
+            required
           />
           <input
             className="placeholder-gray-300 h-12 rounded-full px-5 ring-gray-300 focus:ring-4 focus:outline-gray-200"
             type="password"
             placeholder="🗝️  Password"
+            required
           />
           <button
-            className="h-12 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition-colors"
+            className="h-12 bg-gray-200 text-gray-800 rounded-full hover:bg-red-300 transition-colors"
             type="submit"
           >
             Log in
