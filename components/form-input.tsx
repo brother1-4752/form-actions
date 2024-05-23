@@ -31,12 +31,6 @@ export default function FormInput({
           {error}
         </span>
       ))}
-
-      {/* {errors.map((error, index) => (
-        <span key={index} className="text-red-500 font-medium px-2">
-          {error}
-        </span>
-      ))} */}
     </div>
   );
 }
