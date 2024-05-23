@@ -15,13 +15,7 @@ const formSchema = z.object({
     .regex(/^12345$/g, "잘못된 비밀번호입니다."),
 });
 
-export async function handleSubmit(
-  prevState: any,
-  formData: FormData,
-  event: FormEvent<HTMLFormElement>
-) {
-  event.preventDefault();
-
+export async function handleSubmit(prevState: any, formData: FormData) {
   // 폼데이터 객체 변수화
   const data = {
     email: formData.get("email") as string,
