@@ -4,10 +4,13 @@ import { z } from "zod";
 export const formSchema = z.object({
   email: z
     .string()
-    .regex(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g, "이메일 형식이 아닙니다."),
-  username: z.string().min(3, "3자 이상 입력해주세요."),
+    .regex(
+      /^[\w-\.]+@zod.com$/g,
+      "@zod.com 으로 끝나는 이메일을 입력해주세요."
+    ),
+  username: z.string().min(5, "5자 이상 입력해주세요."),
   password: z
     .string()
-    .min(5, "5자 이상 입력해주세요.")
-    .regex(/^12345$/g, "잘못된 비밀번호입니다."),
+    .min(10, "10자 이상 입력해주세요.")
+    .regex(/\d/g, "비밀번호에 최소 1개 이상의 숫자가 포함되어야 합니다."),
 });

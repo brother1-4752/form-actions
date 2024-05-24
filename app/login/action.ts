@@ -25,15 +25,4 @@ export async function handleSubmit(prevState: any, formData: FormData) {
   } else {
     return { errors: {} };
   }
-
-  // 일반적인 폼데이터 검증 방식
-  // const password = formData.get("password") as string;
-  // const passwordRegex = /^12345$/;
-
-  // 일반적인 폼데이터 검증 결과 반환
-  // if (!passwordRegex.test(password)) {
-  //   return { errors: ["wrong password"] };
-  // } else {
-  //   return { errors: [] };
-  // }
 }
